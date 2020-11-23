@@ -1,24 +1,63 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column    | Type   | Options     |
+| --------- | ------ | ----------- |
+| nickname  | string | null: false |
+| email     | string | null: false |
+| password  | string | null: false |
+| name      | string | null: false |
+| name_kana | string | null: false |
+| birthday  | date   | null: false |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :items
+- has_many :buyers
 
-* Configuration
 
-* Database creation
 
-* Database initialization
+## items テーブル
 
-* How to run the test suite
+| Column        | Type   | Options     |
+| ------------- | ------ | ----------- |
+| image         | ActiveStorageで実装   |
+| item_name     | string | null: false |
+| item_info     | text   | null: false |
+| category      | string | null: false |
+| status        | string | null: false |
+| delivery_fee  | date   | null: false |
+| shipping_area | string | null: false |
+| days_to_ship  | string | null: false |
+| price         | money  | null: false |
+| user_id       | string | null: false |
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
 
-* Deployment instructions
+- belongs_to :user
+- has_one :buyer
 
-* ...
+
+
+## buyers テーブル
+
+| Column           | Type        | Options     |
+| ---------------- | ----------- | ----------- |
+| card_num         | string      | null: false |
+| expiration       | timestamp(4)| null: false |
+| security_code    | string      | null: false |
+| postal_code      | char(7)     | null: false |
+| city             | string      | null: false |
+| town             | string      | null: false |
+| building_name    | string      |             |
+| address          | string      | null: false |
+| phone_num        | string      | null: false |
+| user_id          | string      | null: false |
+| item_id          | string      | null: false |
+
+### Association
+
+- belongs_to :user
+- belongs_to :item
+
