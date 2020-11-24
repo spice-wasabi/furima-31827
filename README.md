@@ -29,7 +29,7 @@
 | category_id      | integer | null: false                    |
 | status_id        | integer | null: false                    |
 | delivery_fee_id  | integer | null: false                    |
-| citys_id         | integer | null: false                    |
+| city_id          | integer | null: false                    |
 | days_to_ship_id  | integer | null: false                    |
 | price            | integer | null: false                    |
 | user_id          | integer | null: false, foreign_key: true |
@@ -45,8 +45,8 @@
 
 | Column           | Type        | Options                        |
 | ---------------- | ----------- | ------------------------------ |
-| postal_code      | char(7)     | null: false                    |
-| citys_id         | integer     | null: false                    |
+| postal_code      | string      | null: false                    |
+| city_id          | integer     | null: false                    |
 | town             | string      | null: false                    |
 | building_name    | string      |                                |
 | address          | string      | null: false                    |
