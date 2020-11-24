@@ -16,9 +16,7 @@
 ### Association
 
 - has_many :items
-- has_many :buyers, through: :purchases
 - has_many :purchases
-
 
 
 
@@ -39,8 +37,6 @@
 ### Association
 
 - belongs_to :user
-- has_one :buyer, through: :purchases
-- has_many :purchases
 
 
 
@@ -54,14 +50,6 @@
 | building_name    | string      |                                |
 | address          | string      | null: false                    |
 | phone_num        | string      | null: false                    |
-| user_id          | integer     | null: false, foreign_key: true |
-| item_id          | integer     | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :user, through: :purchases
-- belongs_to :item, through: :purchases
-- has_many :purchases
 
 
 
@@ -77,5 +65,5 @@
 ### Association
 
 - belongs_to :user
-- belongs_to :item
-- belongs_to :buyer
+- has_one_attached :item
+- has_one_attached :buyer
