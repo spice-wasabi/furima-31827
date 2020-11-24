@@ -37,6 +37,7 @@
 ### Association
 
 - belongs_to :user
+- has_one_attached :purchase
 
 
 
@@ -50,6 +51,11 @@
 | building_name    | string      |                                |
 | address          | string      | null: false                    |
 | phone_num        | string      | null: false                    |
+| purchase_id      | integer     | null: false, foreign_key: true |
+
+### Association
+
+- has_one_attached :purchase
 
 
 
@@ -59,11 +65,9 @@
 | ----------- | ----------- | ------------------------------ |
 | user_id     | integer     | null: false, foreign_key: true |
 | item_id     | integer     | null: false, foreign_key: true |
-| buyer_id    | integer     | null: false, foreign_key: true |
-
 
 ### Association
 
 - belongs_to :user
-- has_one_attached :item
+- belongs_to :item
 - has_one_attached :buyer
