@@ -29,7 +29,7 @@
 | category_id      | integer | null: false                    |
 | status_id        | integer | null: false                    |
 | delivery_fee_id  | integer | null: false                    |
-| shipping_area_id | integer | null: false                    |
+| citys_id         | integer | null: false                    |
 | days_to_ship_id  | integer | null: false                    |
 | price            | integer | null: false                    |
 | user_id          | integer | null: false, foreign_key: true |
@@ -37,7 +37,7 @@
 ### Association
 
 - belongs_to :user
-- has_one_attached :purchase
+- has_one :purchase
 
 
 
@@ -46,7 +46,7 @@
 | Column           | Type        | Options                        |
 | ---------------- | ----------- | ------------------------------ |
 | postal_code      | char(7)     | null: false                    |
-| city             | integer     | null: false                    |
+| citys_id         | integer     | null: false                    |
 | town             | string      | null: false                    |
 | building_name    | string      |                                |
 | address          | string      | null: false                    |
@@ -55,7 +55,7 @@
 
 ### Association
 
-- has_one_attached :purchase
+- belongs_to :purchase
 
 
 
@@ -70,4 +70,4 @@
 
 - belongs_to :user
 - belongs_to :item
-- has_one_attached :buyer
+- has_one :buyer
