@@ -56,3 +56,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :development do
   gem 'rubocop', require: false
 end
+
+# 追加  デバッグツール
+gem 'pry-rails'
+# 追加  ユーザー管理機能
+gem 'devise'
+
+
