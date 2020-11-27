@@ -66,3 +66,8 @@ gem 'pry-rails'
 gem 'devise'
 # 追加  ActiveHash/変更されないデータをモデルファイル内に直接記述
 gem 'active_hash'
+# 追加  画像投稿機能
+gem 'image_processing', '~> 1.2'
+# 追加  画像サイズを調整
+gem 'mini_magick'
+
