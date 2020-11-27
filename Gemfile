@@ -64,5 +64,5 @@ end
 gem 'pry-rails'
 # 追加  ユーザー管理機能
 gem 'devise'
-
-
+# 追加  ActiveHash/変更されないデータをモデルファイル内に直接記述
+gem 'active_hash'
