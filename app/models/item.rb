@@ -7,7 +7,7 @@ class Item < ApplicationRecord
     validates :image
     validates :item_name
     validates :item_info
-    validates :price
+    validates :price, numericality: true, inclusion: { in: 300..9999999 } 
   end
   
   with_options numericality: { other_than: 1 } do
