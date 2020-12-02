@@ -64,7 +64,6 @@ RSpec.describe Item, type: :model do
         end
         it "priceが半角数字以外だと登録できない" do
           @item.price = "１０００"
-          # binding.pry
           @item.valid?
           expect(@item.errors.full_messages).to include("Price is not a number", "Price is not included in the list")
         end
