@@ -22,8 +22,6 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    # @user = User.new
-    # @user = @item.user.includes(:user)
   end
 
 
