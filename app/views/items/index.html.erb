@@ -123,7 +123,7 @@
   <%# 商品一覧 %>
   <div class='item-contents'>
     <h2 class='title'>ピックアップカテゴリー</h2>
-    <%= link_to '新規投稿商品', "#", class: "subtitle" %>
+    <%= link_to '新規投稿商品', new_item_path, class: "subtitle" %>
     <ul class='item-lists'>
     <%if Item.exists? %>
     <% @items.each do |item| %>
@@ -133,9 +133,9 @@
         <div class='item-img-content'>
           <%= image_tag item.image.variant(resize: '500x500'), class: "item-img" %>
           <%# 商品が売れていればsold outを表示しましょう %>
-          <div class='sold-out'>
+          <%# <div class='sold-out'>
             <span>Sold Out!!</span>
-          </div>
+          </div> %>
           <%# //商品が売れていればsold outを表示しましょう %>
         </div>
         <div class='item-info'>
