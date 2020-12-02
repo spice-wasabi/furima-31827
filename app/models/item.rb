@@ -20,13 +20,9 @@ class Item < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :category
-  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :status
-  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :delivery_fee
-  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :city
-  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :days_to_ship
 end
 
