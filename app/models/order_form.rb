@@ -1,5 +1,4 @@
 class OrderForm
-
   include ActiveModel::Model
   attr_accessor :postal_code, :city_id, :town, :building_name, :address, :phone_num,
                 :order_id, :user_id, :item_id

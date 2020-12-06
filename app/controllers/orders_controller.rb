@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
 
   def index
     @item = Item.find(params[:item_id])
+    @order_form = OrderForm.new 
   end
 
   def new
@@ -10,9 +11,9 @@ class OrdersController < ApplicationController
 
   def create
     @item = Item.find(params[:item_id])
-    # binding.pry
     @order_form = OrderForm.new(order_params)
-    if @order_form.save
+    if @order_form.valid?
+      @order_form.save
       redirect_to root_path
     else
       render :index
