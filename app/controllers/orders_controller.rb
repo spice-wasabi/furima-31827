@@ -3,6 +3,16 @@ class OrdersController < ApplicationController
 
   def index
     @order_form = OrderForm.new 
+    if user_signed_in? 
+      if current_user.id == @item.user_id
+        Order.exists?(item_id: @item.id)
+          redirect_to root_path
+        else
+          redirect_to root_path
+      end
+      else
+        redirect_to new_user_session_path
+    end
   end
 
   def new
