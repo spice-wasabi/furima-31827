@@ -11,7 +11,7 @@ with_options presence: true do
   validates :phone_num, format: { with: /\A[0-9]+\z/ }
   validates :user_id
   validates :item_id
-  # validates :token
+  validates :token
 end
 
   def save

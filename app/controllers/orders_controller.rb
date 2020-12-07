@@ -1,15 +1,8 @@
 class OrdersController < ApplicationController
+  before_action :item_params, only: [:index, :create]
 
   def index
-    @item = Item.find(params[:item_id])
     @order_form = OrderForm.new 
-    if Order.exists?(item_id: @item.id)
-      redirect_to root_path
-      else
-      unless user_signed_in? && current_user.id == @item.user_id
-        redirect_to root_path
-      end
-    end
   end
 
   def new
@@ -18,7 +11,6 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @item = Item.find(params[:item_id])
     @order_form = OrderForm.new(order_form_params)
     if @order_form.valid?
       pay_item
@@ -37,9 +29,9 @@ class OrdersController < ApplicationController
   end
 
   def order_form_params
-    item = Item.find(params[:item_id])
-    params.require(:order_form).permit(:postal_code, :city_id, :town, :building_name, :address, :phone_num)
-                                .merge(user_id: current_user.id, item_id: item.id, token: params[:token])
+    params.require(:order_form)
+          .permit( :postal_code, :city_id, :town, :building_name, :address, :phone_num)
+          .merge(user_id: current_user.id, item_id: @item.id, token: params[:token])
   end
 
   def pay_item
