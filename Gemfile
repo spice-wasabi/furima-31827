@@ -70,4 +70,6 @@ gem 'active_hash'
 gem 'image_processing', '~> 1.2'
 # 追加  画像サイズを調整
 gem 'mini_magick'
+# 追加  決済処理機能
+gem 'payjp'
 
