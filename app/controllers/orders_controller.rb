@@ -10,7 +10,6 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @order_form = OrderForm.new 
   end
 
   def create
