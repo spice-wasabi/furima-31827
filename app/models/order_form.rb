@@ -8,7 +8,7 @@ class OrderForm
     validates :city_id, numericality: { other_than: 0 }
     validates :town
     validates :address
-    validates :phone_num, format: { with: /\A[0-9]+\z/ }
+    validates :phone_num, format: { with: /\A\d{10,11}\z/ }
     validates :user_id
     validates :item_id
     validates :token
