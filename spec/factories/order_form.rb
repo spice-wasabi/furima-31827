@@ -4,6 +4,7 @@ FactoryBot.define do
     city_id            {5}
     town               {"青森市"}
     address            {"青森町５−５−５"}
+    building_name      {"青森ビル２０２"}
     phone_num          {"09055558888"}
     user_id            {1}
     item_id            {1}

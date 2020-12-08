@@ -10,6 +10,11 @@ RSpec.describe OrderForm, type: :model do
       it "空欄がなければ登録できる" do
         expect(@order_form).to be_valid
       end
+      it "building_nameがなくても登録できる" do
+        @order_form.building_name = ""
+        @order_form.valid?
+        expect(@order_form).to be_valid
+      end
     end
 
     context '商品出品がうまくいかないとき' do
@@ -28,6 +33,11 @@ RSpec.describe OrderForm, type: :model do
         @order_form.postal_code = "000５５５５"
         @order_form.valid?
         expect(@order_form.errors.full_messages).to include("Postal code is invalid")
+      end
+      it "city_idが空では登録できない" do
+        @order_form.city_id = ""
+        @order_form.valid?
+        expect(@order_form.errors.full_messages).to include("City can't be blank", "City is not a number")
       end
       it "city_idは「0」では登録できない" do
         @order_form.city_id = 0
